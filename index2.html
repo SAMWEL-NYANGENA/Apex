@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Process Automation | High-Impact Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --text-main: #334155;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        section { padding: 80px 0; }
+        .bg-gray { background-color: var(--bg-light); }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 15px; }
+
+        .hero { background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%); padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; color: var(--dark); font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; color: #64748b; }
+        .btn { background: var(--primary); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
+        .btn:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        .logo-slider { overflow: hidden; padding: 40px 0; background: white; border-bottom: 1px solid #e2e8f0; }
+        .logo-track { display: flex; width: calc(250px * 10); animation: scroll 20s linear infinite; align-items: center; }
+        .logo-track span { width: 250px; font-weight: 800; font-size: 1.5rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .product-card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .product-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .product-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; display: block; }
+        .product-card h3 { margin-bottom: 10px; color: var(--dark); }
+        .product-card .tag { font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+
+        .how-it-works { background: var(--dark); color: white; padding: 80px 0; border-radius: 24px; margin-top: 40px; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; margin-top: 40px; }
+        .step h4 { margin-bottom: 10px; font-size: 1.3rem; }
+        .step-num { width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; }
+
+        .case-studies { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .case-card { background: white; border-radius: 16px; padding: 40px; border: 1px solid #e2e8f0; position: relative; }
+        .case-card::before { content: 'CASE STUDY'; position: absolute; top: 20px; right: 20px; font-size: 0.7rem; font-weight: 800; background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 50px; }
+        .testimonial { margin-top: 25px; font-style: italic; color: #475569; border-left: 3px solid var(--primary); padding-left: 15px; }
+        .testimonial span { display: block; margin-top: 10px; font-style: normal; font-weight: 700; color: var(--dark); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .case-studies { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>Automate Your Business. Save Time. Make More Money.</h1>
+        <p>We replace repetitive manual work with smart systems that run 24/7 — so you can scale without hiring more staff or burning out.</p>
+        <a href="#" class="btn">Book My Free Automation Audit</a>
+    </div>
+</header>
+
+<div class="logo-slider">
+    <div class="logo-track">
+        <span>Local Selection</span>
+        <span>Tepton Law</span>
+        <span>Global Real Estate</span>
+        <span>Apex Logistics</span>
+        <span>Prime Accounting</span>
+        <span>Local Selection</span>
+        <span>Tepton Law</span>
+        <span>Global Real Estate</span>
+        <span>Apex Logistics</span>
+        <span>Prime Accounting</span>
+    </div>
+</div>
+
+<section class="container">
+    <div class="section-header">
+        <h2>Automation That Pays for Itself</h2>
+        <p>Each system is built to either save hours, increase revenue, or both.</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <span class="tag">Sales</span>
+            <i class="fas fa-bullseye"></i>
+            <h3>Lead Capture & Follow-Up System</h3>
+            <p>Respond instantly to new leads, follow up automatically, and qualify prospects so you only spend time on serious buyers.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Operations</span>
+            <i class="fas fa-file-invoice"></i>
+            <h3>Admin Automation</h3>
+            <p>Automate invoices, payment reminders, and daily reports — saving your team hours of repetitive work every week.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Support</span>
+            <i class="fas fa-robot"></i>
+            <h3>AI Customer Support</h3>
+            <p>Handle up to 70% of customer inquiries automatically with smart chatbots and email assistants.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Marketing</span>
+            <i class="fas fa-share-nodes"></i>
+            <h3>Social Media Automation</h3>
+            <p>Schedule posts, auto-reply to messages, and stay active online without manually managing every platform.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">HR</span>
+            <i class="fas fa-user-plus"></i>
+            <h3>Hiring & Onboarding Automation</h3>
+            <p>Automatically collect applications, screen candidates, and onboard new hires without endless back-and-forth.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">E-commerce</span>
+            <i class="fas fa-boxes-stacked"></i>
+            <h3>Inventory & Order Sync</h3>
+            <p>Track stock in real-time, prevent overselling, and manage orders across platforms automatically.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Communication</span>
+            <i class="fas fa-comments"></i>
+            <h3>WhatsApp & SMS Automation</h3>
+            <p>Reply to customers instantly, send updates, and follow up automatically using WhatsApp and SMS.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Scheduling</span>
+            <i class="fas fa-calendar-check"></i>
+            <h3>Booking & Appointment System</h3>
+            <p>Let customers book themselves, get reminders, and reduce missed appointments.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Finance</span>
+            <i class="fas fa-credit-card"></i>
+            <h3>Payment & Billing Automation</h3>
+            <p>Send invoices, track payments, and automatically remind clients to pay on time.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Analytics</span>
+            <i class="fas fa-chart-line"></i>
+            <h3>Automated Reports</h3>
+            <p>Get clear reports on your business performance without manually compiling data.</p>
+        </div>
+
+        <div class="product-card">
+            <span class="tag">Documents</span>
+            <i class="fas fa-file-signature"></i>
+            <h3>Document Automation</h3>
+            <p>Create contracts, proposals, and documents instantly with pre-filled data.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="container">
+    <div class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Simple, Fast Implementation</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Identify</h4>
+                    <p>We find where you're losing time or money.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Plan</h4>
+                    <p>We design a simple automation solution.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Build</h4>
+                    <p>We set everything up for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Launch</h4>
+                    <p>Your system runs automatically.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray">
+    <div class="container">
+        <div class="section-header">
+            <h2>Real Business Results</h2>
+        </div>
+
+        <div class="case-studies">
+            <div class="case-card">
+                <h3>Local Selection</h3>
+                <p style="color: var(--primary); font-weight: 600;">E-commerce</p>
+                <p style="margin-top: 15px;">Reduced customer support workload by automating email responses and FAQs.</p>
+                <div class="testimonial">
+                    "We save 3+ hours every day. Most customer questions are handled automatically now."
+                    <span>— Head of Ops</span>
+                </div>
+            </div>
+
+            <div class="case-card">
+                <h3>Tepton Law</h3>
+                <p style="color: var(--primary); font-weight: 600;">Legal Services</p>
+                <p style="margin-top: 15px;">Automated lead generation and outreach, reaching hundreds of potential clients daily.</p>
+                <div class="testimonial">
+                    "Our pipeline tripled. We reach hundreds of leads every day without extra effort."
+                    <span>— Managing Partner</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="text-align: center;">
+    <h2>Stop Doing Work That Can Be Automated</h2>
+    <p style="margin: 20px 0 30px;">Let systems handle the repetitive tasks while you focus on growing your business.</p>
+    <a href="#" class="btn">Get Your Free Automation Audit</a>
+</section>
+
+</body>
+</html>
