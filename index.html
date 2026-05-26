@@ -1,244 +1,1038 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Process Automation | High-Impact Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp API Automation | Official Meta Setup & Chatbots</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root {
-            --primary: #2563eb;
+            --primary: #25D366;
+            --primary-dark: #1faa52;
             --dark: #0f172a;
-            --bg-light: #f8fafc;
+            --text: #475569;
+            --light: #f8fafc;
             --white: #ffffff;
-            --text-main: #334155;
+            --border: #e2e8f0;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        section { padding: 80px 0; }
-        .bg-gray { background-color: var(--bg-light); }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 15px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        .hero { background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%); padding: 100px 0; text-align: center; }
-        .hero h1 { font-size: 3.5rem; color: var(--dark); font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; color: #64748b; }
-        .btn { background: var(--primary); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
-        .btn:hover { background: #1d4ed8; transform: translateY(-2px); }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        .logo-slider { overflow: hidden; padding: 40px 0; background: white; border-bottom: 1px solid #e2e8f0; }
-        .logo-track { display: flex; width: calc(250px * 10); animation: scroll 20s linear infinite; align-items: center; }
-        .logo-track span { width: 250px; font-weight: 800; font-size: 1.5rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .product-card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; }
-        .product-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .product-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .product-card h3 { margin-bottom: 10px; color: var(--dark); }
-        .product-card .tag { font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-        .how-it-works { background: var(--dark); color: white; padding: 80px 0; border-radius: 24px; margin-top: 40px; }
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; margin-top: 40px; }
-        .step h4 { margin-bottom: 10px; font-size: 1.3rem; }
-        .step-num { width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: bold; }
+        section {
+            padding: 90px 0;
+        }
 
-        .case-studies { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .case-card { background: white; border-radius: 16px; padding: 40px; border: 1px solid #e2e8f0; position: relative; }
-        .case-card::before { content: 'CASE STUDY'; position: absolute; top: 20px; right: 20px; font-size: 0.7rem; font-weight: 800; background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 50px; }
-        .testimonial { margin-top: 25px; font-style: italic; color: #475569; border-left: 3px solid var(--primary); padding-left: 15px; }
-        .testimonial span { display: block; margin-top: 10px; font-style: normal; font-weight: 700; color: var(--dark); font-size: 0.9rem; }
+        h1, h2, h3, h4 {
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.7rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.05rem;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-wrapper {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+            linear-gradient(
+                rgba(255,255,255,0.92),
+                rgba(255,255,255,0.95)
+            ),
+            url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400&auto=format&fit=crop') center/cover;
+
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            max-width: 950px;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 780px;
+            margin: auto;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* LOGOS */
+
+        .logo-slider {
+            overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: white;
+            padding: 35px 0;
+        }
+
+        .logo-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 20s linear infinite;
+        }
+
+        .logo-track span {
+            width: 250px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 5));
+            }
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        /* WHY US */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .why-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .why-card i {
+            font-size: 1.7rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* PROCESS */
+
+        .process {
+            background: var(--dark);
+            color: white;
+            border-radius: 30px;
+        }
+
+        .process .section-header h2,
+        .process .section-header p,
+        .process h4,
+        .process p {
+            color: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            background: var(--primary);
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .step h4 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* CASE STUDY */
+
+        .case-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .case-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 45px;
+            position: relative;
+        }
+
+        .case-label {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .case-card h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .case-category {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .result-box {
+            background: var(--light);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .result-box h4 {
+            margin-bottom: 10px;
+        }
+
+        .testimonial {
+            margin-top: 35px;
+            border-left: 4px solid var(--primary);
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            font-weight: 700;
+            font-style: normal;
+            color: var(--dark);
+        }
+
+        /* FAQ */
+
+        .faq {
+            background: var(--light);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border);
+        }
+
+        .faq-item h4 {
+            margin-bottom: 10px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 30px;
+            padding: 80px 30px;
+            color: white;
+        }
+
+        .cta-box h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        .cta-box .btn {
+            background: white;
+            color: var(--dark);
+        }
+
+        .cta-box .btn:hover {
+            background: #f1f5f9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: white;
+        }
+
+        footer p {
+            color: #64748b;
+        }
+
+        /* MOBILE */
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .case-studies { grid-template-columns: 1fr; }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-box h2 {
+                font-size: 2.2rem;
+            }
+
+            .case-card {
+                padding: 35px 25px;
+            }
         }
+
     </style>
 </head>
 <body>
 
-<header class="hero">
-    <div class="container">
-        <h1>Automate Your Business. Save Time. Make More Money.</h1>
-        <p>We replace repetitive manual work with smart systems that run 24/7 — so you can scale without hiring more staff or burning out.</p>
-        <a href="#" class="btn">Book My Free Automation Audit</a>
-    </div>
-</header>
+    <!-- NAV -->
 
-<div class="logo-slider">
-    <div class="logo-track">
-        <span>Local Selection</span>
-        <span>Tepton Law</span>
-        <span>Global Real Estate</span>
-        <span>Apex Logistics</span>
-        <span>Prime Accounting</span>
-        <span>Local Selection</span>
-        <span>Tepton Law</span>
-        <span>Global Real Estate</span>
-        <span>Apex Logistics</span>
-        <span>Prime Accounting</span>
-    </div>
-</div>
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                Whats<span>Flow</span>
+            </div>
 
-<section class="container">
-    <div class="section-header">
-        <h2>Automation That Pays for Itself</h2>
-        <p>Each system is built to either save hours, increase revenue, or both.</p>
-    </div>
-
-    <div class="product-grid">
-
-        <div class="product-card">
-            <span class="tag">Sales</span>
-            <i class="fas fa-bullseye"></i>
-            <h3>Lead Capture & Follow-Up System</h3>
-            <p>Respond instantly to new leads, follow up automatically, and qualify prospects so you only spend time on serious buyers.</p>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#case-study">Case Study</a>
+                <a href="#faq">FAQ</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="product-card">
-            <span class="tag">Operations</span>
-            <i class="fas fa-file-invoice"></i>
-            <h3>Admin Automation</h3>
-            <p>Automate invoices, payment reminders, and daily reports — saving your team hours of repetitive work every week.</p>
-        </div>
+    <!-- HERO -->
 
-        <div class="product-card">
-            <span class="tag">Support</span>
-            <i class="fas fa-robot"></i>
-            <h3>AI Customer Support</h3>
-            <p>Handle up to 70% of customer inquiries automatically with smart chatbots and email assistants.</p>
-        </div>
+    <header class="hero">
 
-        <div class="product-card">
-            <span class="tag">Marketing</span>
-            <i class="fas fa-share-nodes"></i>
-            <h3>Social Media Automation</h3>
-            <p>Schedule posts, auto-reply to messages, and stay active online without manually managing every platform.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">HR</span>
-            <i class="fas fa-user-plus"></i>
-            <h3>Hiring & Onboarding Automation</h3>
-            <p>Automatically collect applications, screen candidates, and onboard new hires without endless back-and-forth.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">E-commerce</span>
-            <i class="fas fa-boxes-stacked"></i>
-            <h3>Inventory & Order Sync</h3>
-            <p>Track stock in real-time, prevent overselling, and manage orders across platforms automatically.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">Communication</span>
-            <i class="fas fa-comments"></i>
-            <h3>WhatsApp & SMS Automation</h3>
-            <p>Reply to customers instantly, send updates, and follow up automatically using WhatsApp and SMS.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">Scheduling</span>
-            <i class="fas fa-calendar-check"></i>
-            <h3>Booking & Appointment System</h3>
-            <p>Let customers book themselves, get reminders, and reduce missed appointments.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">Finance</span>
-            <i class="fas fa-credit-card"></i>
-            <h3>Payment & Billing Automation</h3>
-            <p>Send invoices, track payments, and automatically remind clients to pay on time.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">Analytics</span>
-            <i class="fas fa-chart-line"></i>
-            <h3>Automated Reports</h3>
-            <p>Get clear reports on your business performance without manually compiling data.</p>
-        </div>
-
-        <div class="product-card">
-            <span class="tag">Documents</span>
-            <i class="fas fa-file-signature"></i>
-            <h3>Document Automation</h3>
-            <p>Create contracts, proposals, and documents instantly with pre-filled data.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="container">
-    <div class="how-it-works">
         <div class="container">
+
+            <div class="hero-badge">
+                Official Meta WhatsApp Business API Specialists
+            </div>
+
+            <h1>
+                WhatsApp API Setup, Automation & AI Chatbots for Businesses
+            </h1>
+
+            <p>
+                We help businesses automate customer communication using the official Meta WhatsApp Business API — from Meta onboarding and chatbot setup to FAQ automation, CRM integrations, and outbound messaging guidance.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn">
+                    Book a Consultation
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+                    Chat on WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- LOGOS -->
+
+    <div class="logo-slider">
+        <div class="logo-track">
+            <span>Eldoret House Hunters</span>
+            <span>Real Estate</span>
+            <span>Business Automation</span>
+            <span>WhatsApp API</span>
+            <span>Meta Verified</span>
+
+            <span>Eldoret House Hunters</span>
+            <span>Real Estate</span>
+            <span>Business Automation</span>
+            <span>WhatsApp API</span>
+            <span>Meta Verified</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <div class="container">
+
             <div class="section-header">
-                <h2 style="color: white;">Simple, Fast Implementation</h2>
+                <h2>
+                    WhatsApp Services Built for Modern Businesses
+                </h2>
+
+                <p>
+                    We focus exclusively on WhatsApp Business automation using the official Meta API infrastructure.
+                </p>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Identify</h4>
-                    <p>We find where you're losing time or money.</p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <span class="service-tag">Meta Setup</span>
+                    <i class="fab fa-whatsapp"></i>
+
+                    <h3>Meta Business & API Setup</h3>
+
+                    <p>
+                        We help businesses create Meta portfolios, verify businesses, connect phone numbers, and activate the official WhatsApp API.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Plan</h4>
-                    <p>We design a simple automation solution.</p>
+
+                <div class="service-card">
+                    <span class="service-tag">Chatbots</span>
+                    <i class="fas fa-robot"></i>
+
+                    <h3>WhatsApp FAQ Chatbots</h3>
+
+                    <p>
+                        Automatically answer repetitive customer questions 24/7 and reduce customer support workload.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>Build</h4>
-                    <p>We set everything up for you.</p>
+
+                <div class="service-card">
+                    <span class="service-tag">AI Automation</span>
+                    <i class="fas fa-brain"></i>
+
+                    <h3>AI WhatsApp Assistants</h3>
+
+                    <p>
+                        Use AI-powered systems to answer questions, qualify leads, and assist customers automatically.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h4>Launch</h4>
-                    <p>Your system runs automatically.</p>
+
+                <div class="service-card">
+                    <span class="service-tag">Templates</span>
+                    <i class="fas fa-paper-plane"></i>
+
+                    <h3>Template Message Setup</h3>
+
+                    <p>
+                        We create and submit utility, marketing, and authentication templates for Meta approval.
+                    </p>
                 </div>
+
+                <div class="service-card">
+                    <span class="service-tag">Outbound Messaging</span>
+                    <i class="fas fa-bullhorn"></i>
+
+                    <h3>Outbound Messaging Guidance</h3>
+
+                    <p>
+                        Learn compliant outreach strategies using the official WhatsApp Business API without risking restrictions.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-tag">Integrations</span>
+                    <i class="fas fa-plug"></i>
+
+                    <h3>CRM & Workflow Integrations</h3>
+
+                    <p>
+                        Connect WhatsApp with Google Sheets, Airtable, CRMs, websites, and custom automation workflows.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-tag">Lead Generation</span>
+                    <i class="fas fa-user-check"></i>
+
+                    <h3>Lead Qualification Bots</h3>
+
+                    <p>
+                        Automatically collect customer details and qualify leads before passing them to your sales team.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-tag">Appointments</span>
+                    <i class="fas fa-calendar-check"></i>
+
+                    <h3>Booking & Appointment Bots</h3>
+
+                    <p>
+                        Allow customers to schedule consultations and appointments directly through WhatsApp.
+                    </p>
+                </div>
+
             </div>
+
         </div>
-    </div>
-</section>
 
-<section class="bg-gray">
-    <div class="container">
-        <div class="section-header">
-            <h2>Real Business Results</h2>
-        </div>
+    </section>
 
-        <div class="case-studies">
-            <div class="case-card">
-                <h3>Local Selection</h3>
-                <p style="color: var(--primary); font-weight: 600;">E-commerce</p>
-                <p style="margin-top: 15px;">Reduced customer support workload by automating email responses and FAQs.</p>
-                <div class="testimonial">
-                    "We save 3+ hours every day. Most customer questions are handled automatically now."
-                    <span>— Head of Ops</span>
-                </div>
+    <!-- WHY OFFICIAL API -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-header">
+                <h2>
+                    Why Use the Official WhatsApp API?
+                </h2>
+
+                <p>
+                    Most businesses use basic WhatsApp Business apps. The official API unlocks automation, integrations, scalability, and professional communication systems.
+                </p>
             </div>
 
-            <div class="case-card">
-                <h3>Tepton Law</h3>
-                <p style="color: var(--primary); font-weight: 600;">Legal Services</p>
-                <p style="margin-top: 15px;">Automated lead generation and outreach, reaching hundreds of potential clients daily.</p>
-                <div class="testimonial">
-                    "Our pipeline tripled. We reach hundreds of leads every day without extra effort."
-                    <span>— Managing Partner</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="why-grid">
 
-<section class="container" style="text-align: center;">
-    <h2>Stop Doing Work That Can Be Automated</h2>
-    <p style="margin: 20px 0 30px;">Let systems handle the repetitive tasks while you focus on growing your business.</p>
-    <a href="#" class="btn">Get Your Free Automation Audit</a>
-</section>
+                <div class="why-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Verified Business Presence</h3>
+                    <p>
+                        Build trust with customers using official Meta infrastructure and verified business systems.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Multi-Agent Support</h3>
+                    <p>
+                        Multiple team members can manage customer communication from a centralized system.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-gears"></i>
+                    <h3>Advanced Automation</h3>
+                    <p>
+                        Automate FAQs, follow-ups, reminders, lead qualification, and customer workflows.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Scalable Messaging</h3>
+                    <p>
+                        Reach more customers professionally using approved messaging templates and automation systems.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+        <div class="container">
+
+            <div class="process">
+
+                <div class="container">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Simple Setup Process
+                        </h2>
+
+                        <p>
+                            We handle the technical setup so your business can focus on customers.
+                        </p>
+
+                    </div>
+
+                    <div class="steps">
+
+                        <div class="step">
+                            <div class="step-number">1</div>
+
+                            <h4>Consultation</h4>
+
+                            <p>
+                                We understand your business workflow and communication needs.
+                            </p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+
+                            <h4>Meta Setup</h4>
+
+                            <p>
+                                We set up your Meta Business portfolio and WhatsApp API infrastructure.
+                            </p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+
+                            <h4>Automation Build</h4>
+
+                            <p>
+                                We develop your chatbot, workflows, templates, and integrations.
+                            </p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+
+                            <h4>Launch & Support</h4>
+
+                            <p>
+                                Your WhatsApp system goes live with ongoing technical support available.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CASE STUDY -->
+
+    <section id="case-study">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>
+                    Real Project Implementation
+                </h2>
+
+                <p>
+                    Example of a WhatsApp automation system implemented for a real business.
+                </p>
+
+            </div>
+
+            <div class="case-wrapper">
+
+                <div class="case-card">
+
+                    <div class="case-label">
+                        CASE STUDY
+                    </div>
+
+                    <h3>
+                        Eldoret House Hunters
+                    </h3>
+
+                    <div class="case-category">
+                        Real Estate
+                    </div>
+
+                    <p>
+                        We helped Eldoret House Hunters onboard to the Meta ecosystem and implemented a WhatsApp FAQ chatbot system to automatically respond to customer inquiries about property listings, pricing, availability, and general questions.
+                    </p>
+
+                    <div class="results-grid">
+
+                        <div class="result-box">
+                            <h4>Meta Onboarding</h4>
+                            <p>
+                                Business portfolio setup and WhatsApp API onboarding completed successfully.
+                            </p>
+                        </div>
+
+                        <div class="result-box">
+                            <h4>FAQ Automation</h4>
+                            <p>
+                                Common customer questions handled automatically through WhatsApp.
+                            </p>
+                        </div>
+
+                        <div class="result-box">
+                            <h4>Faster Response Time</h4>
+                            <p>
+                                Customers received instant responses instead of waiting for manual replies.
+                            </p>
+                        </div>
+
+                        <div class="result-box">
+                            <h4>Lead Collection</h4>
+                            <p>
+                                The chatbot captured customer information for follow-up and sales workflows.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="testimonial">
+
+                        "The chatbot now handles repetitive customer questions automatically and gives our clients faster responses."
+
+                        <span>
+                            — Eldoret House Hunters
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq" id="faq">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+                <p>
+                    Answers to common questions businesses ask about the WhatsApp Business API.
+                </p>
+
+            </div>
+
+            <div class="faq-grid">
+
+                <div class="faq-item">
+                    <h4>
+                        What is the WhatsApp Business API?
+                    </h4>
+
+                    <p>
+                        The WhatsApp Business API is the official Meta platform that allows businesses to automate messaging, integrate systems, and manage customer communication at scale.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>
+                        Is this different from normal WhatsApp Business?
+                    </h4>
+
+                    <p>
+                        Yes. The API supports automation, CRM integrations, multi-agent support, AI chatbots, and scalable customer communication systems.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>
+                        Do I need Meta business verification?
+                    </h4>
+
+                    <p>
+                        In most cases yes. We help businesses through the Meta onboarding and verification process.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>
+                        Can I keep my current WhatsApp number?
+                    </h4>
+
+                    <p>
+                        Yes. Existing business numbers can often be migrated to the WhatsApp API infrastructure.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>
+                        Can customers speak with AI on WhatsApp?
+                    </h4>
+
+                    <p>
+                        Yes. AI assistants can answer questions, guide customers, qualify leads, and escalate conversations when necessary.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>
+                        Is bulk messaging allowed?
+                    </h4>
+
+                    <p>
+                        Businesses can send approved template messages using Meta-compliant communication practices.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+                    Scale Customer Communication on WhatsApp
+                </h2>
+
+                <p>
+                    Automate support, lead generation, onboarding, and customer communication using the official WhatsApp Business API.
+                </p>
+
+                <a href="#" class="btn">
+                    Schedule a Free Consultation
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 WhatsFlow — Official WhatsApp Business API Automation Services
+            </p>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
