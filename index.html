@@ -111,15 +111,26 @@
             font-size: 1.4rem;
             font-weight: 800;
             color: var(--dark);
+            line-height: 1.2;
         }
 
         .logo span {
             color: var(--primary);
         }
 
+        .logo-tagline {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: block;
+        }
+
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -203,8 +214,8 @@
 
         .logo-track {
             display: flex;
-            width: calc(250px * 10);
-            animation: scroll 20s linear infinite;
+            width: calc(250px * 12);
+            animation: scroll 24s linear infinite;
         }
 
         .logo-track span {
@@ -222,7 +233,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-250px * 5));
+                transform: translateX(calc(-250px * 6));
             }
         }
 
@@ -460,6 +471,20 @@
             font-size: 1.1rem;
         }
 
+        .cta-email {
+            display: block;
+            margin-top: 20px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .cta-email:hover {
+            opacity: 0.9;
+        }
+
         .cta-box .btn {
             background: white;
             color: var(--dark);
@@ -472,7 +497,7 @@
         /* FOOTER */
 
         footer {
-            padding: 40px 0;
+            padding: 50px 0;
             border-top: 1px solid var(--border);
             text-align: center;
             background: white;
@@ -480,6 +505,17 @@
 
         footer p {
             color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* MOBILE */
@@ -517,6 +553,7 @@
         <div class="container nav-wrapper">
             <div class="logo">
                 Whats<span>Flow</span>
+                <span class="logo-tagline">By Apex Robotics</span>
             </div>
 
             <div class="nav-links">
@@ -543,15 +580,15 @@
             </h1>
 
             <p>
-                We help businesses automate customer communication using the official Meta WhatsApp Business API — from Meta onboarding and chatbot setup to FAQ automation, CRM integrations, and outbound messaging guidance.
+                We help businesses automate customer communication using the official Meta WhatsApp Business API — from Meta onboarding and chatbot setup to FAQ automation, CRM integrations, and outbound messaging guidance. Developed by Apex Robotics Automations.
             </p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn">
+                <a href="https://wa.me/254799060802?text=Hello,%20I'm%20interested%20in%20your%20WhatsApp%20API%20and%20automation%20services." target="_blank" class="btn">
                     Book a Consultation
                 </a>
 
-                <a href="#" class="btn btn-secondary">
+                <a href="https://wa.me/254799060802?text=Hello,%20I'd%20like%20to%20chat%20about%20automating%20my%20business." target="_blank" class="btn btn-secondary">
                     Chat on WhatsApp
                 </a>
             </div>
@@ -564,12 +601,14 @@
 
     <div class="logo-slider">
         <div class="logo-track">
+            <span>Apex Robotics Automations</span>
             <span>Eldoret House Hunters</span>
             <span>Real Estate</span>
             <span>Business Automation</span>
             <span>WhatsApp API</span>
             <span>Meta Verified</span>
 
+            <span>Apex Robotics Automations</span>
             <span>Eldoret House Hunters</span>
             <span>Real Estate</span>
             <span>Business Automation</span>
@@ -1010,8 +1049,12 @@
                     Automate support, lead generation, onboarding, and customer communication using the official WhatsApp Business API.
                 </p>
 
-                <a href="#" class="btn">
+                <a href="https://wa.me/254799060802?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20for%20WhatsApp%20Business%20API." target="_blank" class="btn">
                     Schedule a Free Consultation
+                </a>
+
+                <a href="mailto:info@apexroboticsgroup.com" class="cta-email">
+                    <i class="fas fa-envelope"></i> info@apexroboticsgroup.com
                 </a>
 
             </div>
@@ -1027,7 +1070,10 @@
         <div class="container">
 
             <p>
-                © 2026 WhatsFlow — Official WhatsApp Business API Automation Services
+                © 2026 WhatsFlow — Built by <a href="mailto:info@apexroboticsgroup.com">Apex Robotics Automations</a>
+            </p>
+            <p style="font-size: 0.9rem;">
+                Contact: <a href="mailto:info@apexroboticsgroup.com">info@apexroboticsgroup.com</a> | Phone: <a href="https://wa.me/254799060802">+254 799 060 802</a>
             </p>
 
         </div>
